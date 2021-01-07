@@ -45,5 +45,9 @@
         .container-thin{
             max-width: 600px;
         }
+
+        .main-title {
+            padding-bottom: 1em;
+        }
     }
 </style>
