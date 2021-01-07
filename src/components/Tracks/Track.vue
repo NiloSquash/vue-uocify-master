@@ -13,7 +13,7 @@
             {{track.album.title}}
         </td>
         <td class="track-duration">
-            {{ getDuration | durationFormat }}
+            {{ getDuration | formatTime }}
         </td>                                
     </tr>
 </template>
