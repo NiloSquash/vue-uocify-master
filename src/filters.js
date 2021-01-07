@@ -1,6 +1,7 @@
 // filters.js
 import Vue from "vue";
 
+// filtre per a mostrar la duració del Track en format NN:NN
 Vue.filter('formatTime', function(value) {
     if (value) {
       const parts = value.split(":");
@@ -10,7 +11,8 @@ Vue.filter('formatTime', function(value) {
     }
   });
 
-  Vue.filter('NumFormat', function(value)) {
+  // filtre per mostrar el nombre de fans amb "," cada 3 números
+  Vue.filter('NumFormat', function(value) {
     if (!value) return '0.00';
     var intPart = Number(value).toFixed(0);
     var intPartFormat = intPart.toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1, ');
@@ -25,5 +27,3 @@ Vue.filter('formatTime', function(value) {
       }
       }
   })
-
-  new
