@@ -2,7 +2,7 @@
     <article class="artist col-sm-6 col-md-4 col-lg-3 col-xl-2">
         <img class="artist-picture" :src="artist.picture_medium" :alt="artist.name">
         <span class="artist-name">{{artist.name}}</span>
-        <span class="artist-fans">{{artist.nb_fan}} fans</span>
+        <span class="artist-fans">{{artist.nb_fan | NumFormat}} fans</span>
     </article>
 </template>
 
