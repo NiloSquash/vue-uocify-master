@@ -61,42 +61,50 @@ export default {
             
             if (this.query != q){
                 this.query = q;
-                this.search();
+                this.$forceUpdate();
             }
         }
-    }, created () {
-            this.search();  
+    }, async created () {
+            await this.search(this.$route.params.q);  
     }, methods: {
-        async search() {
-
+        async updateTracks (q) {
             this.tracks = [];
             this.tracksTotal = null;
-            this.albumsTotal = null;
-            this.artistsTotal = null;
-            this.moreArtistsURL = null;
             this.moreTracksURL = null;
-            this.moreAlbumsURL = null;
 
-            var albumsResult = await getAlbums(this.query);
-            this.albums = albumsResult.data;
-            this.albumsTotal = albumsResult.total;
-            if (this.albumsTotal>25){
-                this.moreArtistsURL = albumsResult.next;
-            }
-
-            var tracksResult = await getTracks(this.query);
+            var tracksResult = await getTracks(q);
             this.tracks = tracksResult.data;
             this.tracksTotal = tracksResult.total;
             if (this.tracksTotal>25){
                 this.moreTracksURL = tracksResult.next;
             }
+        }, async updateAlbums (q) {
+            this.albums = [];
+            this.albumsTotal = null;
+            this.moreAlbumsURL = null;
 
-            var artistsResult = await getArtists(this.query);
+            var albumsResult = await getAlbums(q);
+            this.albums = albumsResult.data;
+            this.albumsTotal = albumsResult.total;
+            if (this.albumsTotal>25){
+                this.moreAlbumsURL = albumsResult.next;
+            }
+        }, async updateArtists (q) {
+            this.artists = [];
+            this.artistsTotal = null;
+            this.moreArtistsURL = null;
+            
+            var artistsResult = await getArtists(q);
             this.artists = artistsResult.data;
             this.artistsTotal = artistsResult.total;
             if (this.artistsTotal > 25){
                 this.moreArtistsURL = artistsResult.next;
             }
+        }, async search(q) {
+            this.query = q;
+            await this.updateTracks (q); 
+            await this.updateAlbums (q);
+            await this.updateArtists (q);
         }
     }
 }
