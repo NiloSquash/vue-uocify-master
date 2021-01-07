@@ -70,8 +70,6 @@ export default {
         async search() {
 
             this.tracks = [];
-            this.albums = [];
-            this.artists = [];
             this.tracksTotal = null;
             this.albumsTotal = null;
             this.artistsTotal = null;
