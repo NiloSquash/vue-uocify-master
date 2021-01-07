@@ -5,6 +5,7 @@ import SearchResults from '@/views/SearchResults'
 import Login from '@/views/Login'
 import Register from '@/views/Register'
 import NotFound from '@/views/NotFound'
+import Playlist from '@/views/Playlist'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ Vue.use(VueRouter)
     path: '/search/:q',
     name:'search',
     component: SearchResults
+  },        
+  {
+    path: '/playlist/:l',
+    name:'playlist',
+    component: Playlist
   },  
   {
       path: '*',

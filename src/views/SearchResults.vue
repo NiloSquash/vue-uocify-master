@@ -34,9 +34,12 @@
 import albumsjson from "@/json/albums.json";
 import artistsjson from "@/json/artists.json";
 import tracksjson from "@/json/tracks.json";
+
 import TrackList from '@/components/Tracks/TrackList'
 import AlbumList from '@/components/Albums/AlbumList'
 import ArtistList from '@/components/Artists/ArtistList'
+
+
 
 export default {
     name:'SearchResults',
@@ -51,8 +54,7 @@ export default {
             artistsTotal: artistsjson.total,
             query: this.$route.params.q || ''
         }
-    },    
-    watch: {
+    },watch: {
         '$route.params.q': function (q) {
             this.query = q
         }

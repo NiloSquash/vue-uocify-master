@@ -1,19 +1,34 @@
 <template>
     <main class="page-home">
-        <div class="container container-thin">
+        <div class="container">
             <img class="logo" src="@/assets/icon.svg" alt="logo">
             <h1 class="main-title">¿En busca de música?</h1>
-            <p class="lorem-textum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus arcu, feugiat eu molestie in, finibus sit amet lorem. Phasellus consectetur ipsum in imperdiet ultrices. </p>
+            <playlist-list :playlists="playlists" />
         </div>
     </main>
 </template>
 
 <script>
+    import PlaylistList from '@/components/Playlists/PlaylistList';
+    import {getPlaylists} from '@/api';
+
     export default {
         name:'Home',
-    }
-</script>
+        components:{ PlaylistList },
+        data(){
+            return{
+                playlists: [] 
+            }
+        }, async created () {
+            await this.loadPlaylists();      
+        }, methods: {
+            async loadPlaylists () {
+                this.playlists = await getPlaylists();
+            }
+        }
+    } 
 
+</script>
 
 <style lang="scss">
     .page-home{
