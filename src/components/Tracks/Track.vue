@@ -4,7 +4,7 @@
             <img :src="track.album.cover_small" :alt="track.title">
         </td>
         <td class="track-title">
-            {{track.title}}
+            <a :href="track.link">{{track.title}}</a>
         </td>
         <td class="track-artist">
             {{track.artist.name}}
