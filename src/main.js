@@ -14,6 +14,9 @@ import './firebase';
 // estilos app
 import './styles/main.scss';
 
+// filters
+import './filters';
+
 // después de las importaciones, le decimos a Vue que las use:
 library.add(faBars, faSearch, faChevronRight, faUser, faSignOutAlt) // añade iconos de fontawesome a libreria
 Vue.component('fa-icon', FontAwesomeIcon) // definimos el componente <fa-icon> para usar los iconos en los templates
