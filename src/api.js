@@ -1,19 +1,41 @@
 
+const baseURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
 
 async function getPlaylists(){
-    const response =  await fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists")
-    const { data: playlists } =  await response.json()
-    return playlists
+    const url = baseURL + 'chart/0/playlists';
+    var response =  await fetch(url);
+    var { data: playlists } =  await response.json();
+    return playlists;
 }    
 
 async function getPlaylist(id){
-    const url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/playlist/' + id
-    const response =  await fetch(url)
-    const playlist =  await response.json()
+    var url = baseURL + 'playlist/' + id
+    var response =  await fetch(url)
+    var playlist =  await response.json()
     return playlist
 } 
 
-export { getPlaylists, getPlaylist }
+async function getArtists(q){
+    return await search('artist',q);
+} 
+
+async function getAlbums(q){
+    return await search('album',q);
+}
+
+async function getTracks(q){
+    return await search('track',q);
+}
+
+async function search(obj, q){
+    var url = baseURL + 'search/' + obj + '?q=' + q;
+    var response =  await fetch(url);
+    var objs =  await response.json();
+    return objs;
+}
+
+
+export { getPlaylists, getPlaylist, getArtists, getAlbums, getTracks }
 
 
 
