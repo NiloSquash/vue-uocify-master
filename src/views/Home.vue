@@ -3,7 +3,9 @@
         <div class="container">
             <img class="logo" src="@/assets/icon.svg" alt="logo">
             <h1 class="main-title">¿En busca de música?</h1>
+            <div id="playlistContainer">
             <playlist-list :playlists="playlists" />
+            </div>
         </div>
     </main>
 </template>
@@ -45,8 +47,10 @@
         .main-title {
             padding-bottom: 1em;
         }
-        #playlistsContainer {
-            
-        }
     }
+
+    @media only screen and (max-width: 600px) {
+        
+    }
+
 </style>
