@@ -3,7 +3,9 @@
         <div class="container">
             <img class="logo" src="@/assets/icon.svg" alt="logo">
             <h1 class="main-title">¿En busca de música?</h1>
+            <div id="playlistsContainer">
             <playlist-list :playlists="playlists" />
+            </div>
         </div>
     </main>
 </template>
@@ -48,6 +50,10 @@
 
         .main-title {
             padding-bottom: 1em;
+        }
+        #playlistsContainer {
+            grid: auto / auto auto auto auto auto;
+            display:grid;
         }
     }
 </style>
