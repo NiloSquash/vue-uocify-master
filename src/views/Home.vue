@@ -26,7 +26,7 @@
                 this.playlists = await getPlaylists();
             }
         }
-    } 
+    }
 
 </script>
 
