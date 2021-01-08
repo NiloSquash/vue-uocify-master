@@ -48,7 +48,16 @@
             padding-bottom: 1em;
         }
         
-    @media only screen and (max-width: 600px) {
-    }
+        @media only screen and (max-width: 600px) {
+             #playlistContainer {
+                 display: flex;
+                 flex-wrap: wrap;
+                
+                .playlists {
+                    flex: 1 0 21%;
+                    margin: 20px;
+                }
+             }
+        }
     }
 </style>
