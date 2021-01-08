@@ -1,6 +1,6 @@
 <template>
     <article class="playlist col-sm-6 col-md-4 col-lg-3 col-xl-2"> 
-        <a :href="'/playlist/'+ playlist.id"><img class="playlist-picture" :src="playlist.picture_medium" :alt="playlist.name"></a>
+        <router-link :to="'/playlist/'+ playlist.id"><img class="playlist-picture" :src="playlist.picture_medium" :alt="playlist.name"></router-link>
         <span class="playlist-title">{{playlist.title}}</span>
         <span class="playlist-tracks">{{playlist.nb_tracks}} canciones</span>
     </article>
