@@ -29,9 +29,9 @@ module.exports = {
   
 iconPaths: {
   favicon: 'public/favicon.ico',
-  iconSad: 'src/assets/icon-sad.svg',
-  icon: 'src/assets/icon.svg',
-  logo: 'src/assets/logo.svg',
+  iconSad: 'public/img/icons/icon-sad.svg',
+  icon: 'public/img/icons/icon.svg',
+  logo: 'public/img/icons/logo.svg',
 },
 
     // configure the workbox plugin
