@@ -44,16 +44,11 @@
             margin-bottom: 35px;
         }
 
-        .container-thin{
-            max-width: 600px;
-        }
-
         .main-title {
             padding-bottom: 1em;
         }
         #playlistsContainer {
-            grid: auto / auto auto auto auto auto;
-            display:grid;
+            
         }
     }
 </style>
