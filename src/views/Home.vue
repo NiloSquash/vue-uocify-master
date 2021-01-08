@@ -47,10 +47,8 @@
         .main-title {
             padding-bottom: 1em;
         }
-    }
-
-    @media only screen and (max-width: 600px) {
         
+    @media only screen and (max-width: 600px) {
     }
-
+    }
 </style>
